@@ -440,8 +440,8 @@ nav .container {
 
 .sign-up-section {
   background-color: #f4feff;
-  border: 2px solid #d2d6ff;
-  border-radius: 10px;
+  border-top: 2px solid #d2d6ff;
+  border-bottom: 2px solid #d2d6ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -966,11 +966,21 @@ section h2 {
       }
     }
   }
-
+  .footer-logo-section {
+    width: 80% !important;
+    p {
+      text-align: right;
+    }
+  }
   .footer-bottom {
     flex-direction: column;
     flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    .footer-copyright {
+      text-align: right !important;
+    }
   }
 
   .footer-links {
@@ -1001,7 +1011,11 @@ section h2 {
 
   .how-it-works-card {
     h3 {
-      font-size: 18px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 12px;
       margin-bottom: 0;
     }
   }
