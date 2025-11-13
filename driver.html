@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وصليني - للسائقات</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/driver.css" />
+  </head>
+  <body class="bg-white">
+    <!-- Header Wrapper with Gradient Background -->
+    <div class="header-wrapper">
+      <!-- Navigation Header -->
+      <nav class="py-4 px-6">
+        <div
+          class="container mx-auto flex md:flex-row flex-row-reverse justify-between items-center"
+        >
+          <button id="drawer-toggle" class="text-2xl text-gray-800 lg:hidden">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <img src="assets/imgs/logo.svg" alt="وصليني" />
+          </div>
+
+          <div class="hidden lg:flex items-center gap-8">
+            <a
+              href="#home"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >الرئيسية</a
+            >
+            <a
+              href="#features"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >مزايا وصليني</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >كيف يعمل</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Drawer Menu -->
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <div class="drawer" id="drawer">
+        <div class="drawer-header">
+          <div class="drawer-logo">
+            <img src="assets/imgs/logo.svg" alt="وصليني" />
+          </div>
+          <button class="drawer-close" id="drawer-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="drawer-menu">
+          <li><a href="#home" class="drawer-link">الرئيسية</a></li>
+          <li><a href="#features" class="drawer-link">مزايا وصليني</a></li>
+          <li><a href="#how-it-works" class="drawer-link">كيف يعمل</a></li>
+        </ul>
+        <div class="drawer-footer">
+          <p class="drawer-copyright">© 2025 جميع الحقوق محفوظة - وصليني</p>
+          <div class="drawer-app-buttons">
+            <a
+              href="#"
+              class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+            >
+              <img
+                src="./assets/imgs/play.svg"
+                alt="Google Play"
+                class="w-10 h-10"
+              />
+              <div class="flex flex-col">
+                <span class="text-[10px] md:text-[12px] font-regular"
+                  >أحصل عليه على
+                </span>
+                <span class="font-semibold text-[10px] md:text-[12px]"
+                  >Google Play</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                <path
+                  d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                />
+              </svg>
+              <div class="flex flex-col">
+                <span class="text-[10px] md:text-[12px] font-regular"
+                  >تنزيل من
+                </span>
+                <span class="font-semibold text-[10px] md:text-[12px]"
+                  >متجر التطبيقات</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <section id="home" class="py-10 px-6">
+        <div class="container mx-auto">
+          <div class="text-center mb-12">
+            <div class="hero-badge">
+              <p>
+                <i class="fa-solid fa-arrow-right ml-2 text-[12px]"></i>
+                عمولة واضحة · رحلات مستمرة · حماية أثناء الرحلة
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-4 mb-4">
+              <h1
+                class="text-4xl w-fit mx-auto md:text-6xl font-bold text-black mb-4 relative"
+              >
+                انضمي ككابتن في وصليني
+              </h1>
+              <p class="text-[16px] md:text-[20px] md:w-[500px] mx-auto">
+                اشتغلى بوقتك… وزوّدى دخلك مع رحلات يومية وحوافز شهرية.
+              </p>
+              <button class="bg-[#23B1C8] text-white px-4 py-3 rounded-full">
+                سجّلى ككابتن الآن
+              </button>
+            </div>
+            <div class="flex items-center gap-2 mb-4 justify-center">
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-2 px-3 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <img
+                  src="./assets/imgs/play.svg"
+                  alt="Google Play"
+                  class="w-10 h-10"
+                />
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >أحصل عليه على
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >Google Play</span
+                  >
+                </div>
+              </a>
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-2 px-3 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >تنزيل من
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >متجر التطبيقات</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Phone Images -->
+      <div class="phone-container absolute bottom-0">
+        <img
+          src="assets/imgs/captin-header/img.png"
+          alt="وصليني App"
+          class="phone-img z-10"
+        />
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section py-20 px-6 bg-white">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[28px] md:text-[36px] font-bold text-[#02140D] mb-4 scroll-animate slide-up"
+          >
+            مميزات القيادة مع وصليني
+          </h2>
+          <p
+            class="text-[16px] md:text-[18px] text-[#333] max-w-2xl mx-auto scroll-animate slide-up delay-100"
+          >
+            استمتعى بتجربة قيادة مريحة مع نظام مصمم لدعمك، ومساعدتك في تحقيق دخل
+            أفضل كل يوم.
+          </p>
+        </div>
+
+        <div class="owl-carousel features-carousel max-w-6xl mx-auto">
+          <!-- Feature Card 1: Map Tracking -->
+          <div class="driver-feature-card item">
+            <div class="feature-image-wrapper">
+              <img
+                src="assets/imgs/captin-features/3.png"
+                alt="تتبعى الخرائط بدقة"
+                class="feature-image"
+              />
+            </div>
+            <h3 class="feature-title">تتبعى الخرائط بدقة</h3>
+            <p class="feature-description">
+              خرائط محسنة وتوجيه ذكي يوصلك لأفضل طريق بأقل وقت.
+            </p>
+          </div>
+
+          <!-- Feature Card 2: Fast Payments -->
+          <div class="driver-feature-card item">
+            <div class="feature-image-wrapper">
+              <img
+                src="assets/imgs/captin-features/2.png"
+                alt="مدفوعات سريعة وواضحة"
+                class="feature-image"
+              />
+            </div>
+            <h3 class="feature-title">مدفوعات سريعة وواضحة</h3>
+            <p class="feature-description">
+              اختاري طريقة التحويل اللي تناسبك مع كشف أرباح شفاف.
+            </p>
+          </div>
+
+          <!-- Feature Card 3: Easy Trip Acceptance -->
+          <div class="driver-feature-card item">
+            <div class="feature-image-wrapper">
+              <img
+                src="assets/imgs/captin-features/1.png"
+                alt="قبول الرحلات بسهولة"
+                class="feature-image"
+              />
+            </div>
+            <h3 class="feature-title">قبول الرحلات بسهولة</h3>
+            <p class="feature-description">
+              استقبلى الطلبات بضغطة واحدة مع تفاصيل واضحة لكل رحلة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-20 px-6">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="text-[28px] md:text-[36px] font-bold text-[#02140D] mb-4 scroll-animate slide-up"
+          >
+            قصص نجاح من كباتن وصليني
+          </h2>
+          <p
+            class="text-[16px] md:text-[18px] text-[#333] max-w-2xl mx-auto scroll-animate slide-up delay-100"
+          >
+            اسمعى تجارب كباتن انضمّوا لوصليني وحققوا دخل أفضل ومرونة أكبر في
+            وقتهم.
+          </p>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel max-w-6xl mx-auto">
+          <!-- Testimonial Card 1 -->
+          <div class="driver-testimonial-card item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                من أول أسبوع بدأت أحقق دخل ممتاز، والأجمل إني اختار وقت شغلي
+                براحة. دعمهم سريع وكل شيء واضح.
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://placehold.co/80x80/23B1C8/FFFFFF?text=م"
+                    alt="مجد العتيبي"
+                    class="avatar-img"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">مجد العتيبي</h4>
+                  <p class="testimonial-role">كابتن بدوام جزئي</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="driver-testimonial-card item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                من أول أسبوع بدأت أحقق دخل ممتاز، والأجمل إني أختار وقت شغلي
+                براحة. دعمهم سريع وكل شيء واضح.
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://placehold.co/80x80/23B1C8/FFFFFF?text=ن"
+                    alt="نوف العتيبي"
+                    class="avatar-img"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">نوف العتيبي</h4>
+                  <p class="testimonial-role">كابتن بدوام جزئي</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="driver-testimonial-card item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                من أول أسبوع بدأت أحقق دخل ممتاز، والأجمل إني أختار وقت شغلي
+                براحة. دعمهم سريع وكل شيء واضح.
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://placehold.co/80x80/23B1C8/FFFFFF?text=ن"
+                    alt="نورة الخضر"
+                    class="avatar-img"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">نورة الخضر</h4>
+                  <p class="testimonial-role">كابتن بدوام جزئي</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section pt-10 px-6">
+      <div class="container mx-auto">
+        <div class="download-wrapper">
+          <!-- Left Side - Phone Image -->
+          <div class="download-image-wrapper">
+            <div
+              class="flex flex-col download-buttons md:hidden gap-2 scroll-animate slide-up delay-200"
+            >
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-3 px-2 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <img
+                  src="./assets/imgs/play.svg"
+                  alt="Google Play"
+                  class="w-8 h-8"
+                />
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >أحصل عليه على
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >Google Play</span
+                  >
+                </div>
+              </a>
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-3 px-2 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >تنزيل من
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >متجر التطبيقات</span
+                  >
+                </div>
+              </a>
+            </div>
+            <img
+              src="assets/imgs/captin-download/img.png"
+              alt="وصليني App"
+              class="download-phone-img"
+            />
+          </div>
+
+          <!-- Right Side - Content -->
+          <div class="download-content-wrapper">
+            <h2 class="download-title scroll-animate slide-up">
+              ابدأي رحلتك مع وصليني وحققي دخل إضافي اليوم!
+            </h2>
+            <p class="download-description scroll-animate slide-up delay-100">
+              انضمي ككابتن، استقبلي طلبات التوصيل بسهولة، وتابعي مشاويرك لحظة
+              بلحظة عبر تطبيق موثوق وسهل الاستخدام.
+            </p>
+            <div
+              class="hidden download-buttons md:flex flex-row gap-4 scroll-animate slide-up delay-200"
+            >
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-3 px-6 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <img
+                  src="./assets/imgs/play.svg"
+                  alt="Google Play"
+                  class="w-10 h-10"
+                />
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >أحصل عليه على
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >Google Play</span
+                  >
+                </div>
+              </a>
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-3 px-6 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >تنزيل من
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >متجر التطبيقات</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6 how-it-works">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Cards Section -->
+          <div class="space-y-4">
+            <h2
+              class="text-[24px] md:text-[32px] font-bold text-[#02140D] text-center mb-4 text-start scroll-animate slide-up"
+            >
+              كيف يعمل تطبيق شركاء وصليني
+            </h2>
+            <div
+              class="how-it-works-card active scroll-animate fade-in delay-100"
+              data-video-card="true"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3
+                    class="font-bold text-[14px] md:text-[16px] text-[#02140D]"
+                  >
+                    طريقة صرف الأرباح والتواصل مع الدعم الفني
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-[#02140D] text-sm">
+                      تعرف على كيفية متابعة أرباحك وسحبها بكل سهولة، بالإضافة
+                      إلى طرق التواصل مع فريق الدعم الفني للحصول على المساعدة
+                      والإجابة عن استفساراتك في أي وقت.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="video-container shadow-none block md:hidden w-full h-full"
+            >
+              <video
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                controls
+                class="w-full h-full object-cover rounded-xl"
+              ></video>
+            </div>
+
+            <div class="how-it-works-card scroll-animate fade-in delay-200">
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3
+                    class="font-bold text-[14px] md:text-[16px] text-[#02140D]"
+                  >
+                    طريقة استقبال وقبول الرحلات
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-[#02140D] text-sm">
+                      تعلم كيفية استقبال طلبات الرحلات من الراكبات، ومراجعة
+                      تفاصيل الرحلة قبل قبولها، وكيفية إدارة جدولك اليومي بكفاءة
+                      لزيادة أرباحك.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+            <div class="how-it-works-card scroll-animate fade-in delay-300">
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-[#02140D]">
+                    طريقة التسجيل ككابتن في وصليني
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-[#02140D] text-sm">
+                      اطلعي على خطوات التسجيل كسائقة في وصليني، والمتطلبات
+                      اللازمة للحصول على الموافقة، وكيفية إكمال ملفك الشخصي
+                      والبدء في العمل.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="video-container desktop-video hidden md:block w-full h-full"
+          >
+            <video
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              controls
+              class="w-full h-full object-cover rounded-xl"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-0 px-6 pb-6">
+      <!-- Top Section -->
+      <div class="footer-top scroll-animate slide-up">
+        <!-- Left Side - Links -->
+
+        <!-- Center - Logo, Social, and Copyright -->
+        <div class="footer-logo-section">
+          <div class="footer-logo">
+            <img src="assets/imgs/logo.svg" alt="وصليني" class="h-8 w-auto" />
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Contact Info -->
+      <div class="footer-contact">
+        <div class="footer-contact-info">
+          <a
+            href="#"
+            class="footer-whatsapp-icon"
+            aria-label="WhatsApp"
+            id="footer-whatsapp-link"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <div class="footer-contact-phone">
+            <p class="footer-contact-text">
+              الرقم الموحد للدعم الفني والاستفسارات
+            </p>
+            <span class="footer-phone-number">920009771</span>
+          </div>
+        </div>
+        <p class="hidden md:block footer-copyright">
+          2025 جميع الحقوق محفوظة - وصليني
+        </p>
+        <div class="hidden md:flex footer-links flex gap-2">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">الشروط والاحكام</a>
+        </div>
+
+        <div
+          class="md:hidden block mobile-footer-info border-t border-gray-200 pt-4"
+        >
+          <div class="footer-links flex gap-2">
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">الشروط والاحكام</a>
+          </div>
+          <p class="footer-copyright text-center">
+            2025 جميع الحقوق محفوظة - وصليني
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/driver.js"></script>
+  </body>
+</html>
