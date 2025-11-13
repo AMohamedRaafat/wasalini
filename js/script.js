@@ -60,10 +60,31 @@ $(document).ready(function () {
         ],
     });
 
-    // How It Works Card Interactions
+    // How It Works Card Accordion
     $(".how-it-works-card").on("click", function () {
+        var $clickedCard = $(this);
+        var isActive = $clickedCard.hasClass("active");
+        var hasVideo = $clickedCard.data("video-card") === true;
+
+        // Remove active class from all cards
         $(".how-it-works-card").removeClass("active");
-        $(this).addClass("active");
+
+        // If the clicked card wasn't active, make it active (toggle behavior)
+        if (!isActive) {
+            $clickedCard.addClass("active");
+        }
+
+        // Show/hide video based on which card is active
+        if (!isActive && hasVideo) {
+            $(".video-container").addClass("active");
+        } else {
+            $(".video-container").removeClass("active");
+        }
     });
+
+    // Initialize video visibility on page load
+    if ($(".how-it-works-card.active").data("video-card") === true) {
+        $(".video-container").addClass("active");
+    }
 });
 
