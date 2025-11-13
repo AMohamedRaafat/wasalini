@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وصليني - نقل نسائي آمن</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-white">
+    <!-- Header Wrapper with Gradient Background -->
+    <div class="header-wrapper">
+      <!-- Navigation Header -->
+      <nav class="py-4 px-6">
+        <div class="container mx-auto flex md:flex-row flex-row-reverse justify-between items-center">
+          <button id="drawer-toggle" class="text-2xl text-gray-800 lg:hidden">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <img src="assets/imgs/logo.svg" alt="وصليني"  />
+          </div>
+
+          <div class="hidden lg:flex items-center gap-8">
+            <a
+              href="#home"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >الرئيسية</a
+            >
+            <a
+              href="#features"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >مزايا وصليني</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >كيف يعمل</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Drawer Menu -->
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <div class="drawer" id="drawer">
+        <div class="drawer-header">
+          <div class="drawer-logo">
+            <img src="assets/imgs/logo.svg" alt="وصليني"  />
+          </div>
+          <button class="drawer-close" id="drawer-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="drawer-menu">
+          <li><a href="#home" class="drawer-link">الرئيسية</a></li>
+          <li><a href="#features" class="drawer-link">مزايا وصليني</a></li>
+          <li><a href="#how-it-works" class="drawer-link">كيف يعمل</a></li>
+        </ul>
+        <div class="drawer-footer">
+          <p class="drawer-copyright">© 2025 جميع الحقوق محفوظة - وصليني</p>
+          <div class="drawer-app-buttons">
+                <a
+                  href="#"
+                  class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+                >
+                  <img
+                    src="./assets/imgs/play.svg"
+                    alt="Google Play"
+                    class="w-10 h-10"
+                  />
+                  <div class="flex flex-col">
+                    <span class="text-[10px] md:text-[12px] font-regular"
+                      >أحصل عليه على
+                    </span>
+                    <span class="font-semibold text-[10px] md:text-[12px]">Google Play</span>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                    <path
+                      d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                    />
+                  </svg>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] md:text-[12px] font-regular"
+                      >تنزيل من
+                    </span>
+                    <span class="font-semibold text-[10px] md:text-[12px]"
+                      >متجر التطبيقات</span
+                    >
+                  </div>
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <section id="home" class="py-10 px-6">
+        <div class="container mx-auto">
+          <div class="text-center mb-12">
+            <div class="hero-badge">
+              <p>
+                أول تطبيق توصيل للبنات فقط في السعودية
+                <i class="fa-solid fa-arrow-up mr-2"></i>
+              </p>
+            </div>
+            <h1
+              class="text-4xl w-fit mx-auto md:text-6xl font-bold text-black mb-8 relative"
+            >
+              نوصّلك بثقة وراحة
+              <img
+                src="assets/imgs/header/scratch-vector.png"
+                alt=""
+                class="absolute -bottom-6 left-0 w-[112px] h-[20px]"
+              />
+            </h1>
+            <div class="flex items-center gap-4 mb-12 justify-center">
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <img
+                  src="./assets/imgs/play.svg"
+                  alt="Google Play"
+                  class="w-10 h-10"
+                />
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >أحصل عليه على
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]">Google Play</span>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="bg-black flex gap-4 items-center py-2 px-4 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >تنزيل من
+                  </span>
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >متجر التطبيقات</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Phone Images -->
+      <div class="phone-container absolute bottom-0">
+        <img
+          src="assets/imgs/header/float-img-left.png"
+          alt=""
+          class="float-img-left block"
+        />
+        <img
+          src="assets/imgs/header/phone.png"
+          alt="وصليني App"
+          class="phone-img max-w-xs md:max-w-md z-10"
+        />
+        <img
+          src="assets/imgs/header/float-img-right.png"
+          alt=""
+          class="float-img-right block"
+        />
+      </div>
+    </div>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- White Badge -->
+          <div class="trust-badge rounded-full">
+            <div class="trust-icon">
+              <img src="assets/imgs/users.svg" alt="Trust Icon" />
+            </div>
+            <p>أكثر من <span>1.7 مليون</span> مستفيدة في المملكة</p>
+          </div>
+          <div class="text-center w-fit mx-auto">
+            <h1
+              class="text-[24px] md:text-[36px] font-bold text-black text-center mb-4"
+            >
+              موثوق من آلاف الراكبات في جميع أنحاء المملكة
+            </h1>
+            <p class="text-[16px] md:text-[20px] md:w-[500px] mx-auto">
+              وصليني هي خدمة نقل آمنة ومخصصة للنساء فقط، تقدّم لكِ رحلات مريحة
+              وسائقات معتمدات وموثقات عبر أبشر وهيئة النقل. استمتعي بتجربة تنقل
+              مطمئنة في كل مشوار.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sign-up-section">
+      <button
+        class="bg-[#23B1C8] hover:bg-[#23B1C8]/80 transition flex items-center gap-2 text-white py-2 px-4 rounded-full"
+      >
+        <span class="text-[12px] md:text-[14px] font-semibold"
+          >سجلي معنا لتصلك العروض</span
+        >
+        <img src="assets/imgs/fire.svg" alt="Fire" />
+      </button>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-white">
+      <div class="container mx-auto ">
+        <div
+          class="md:w-[80%] w-full mx-auto text-center bg-[#33C1D9] py-2 px-4 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <div
+            class="phone px-4 rounded-2xl flex items-end justify-center pt-10"
+            style="
+              background: linear-gradient(
+                347.19deg,
+                #f1fdff 21.44%,
+                #b1f4ff 57.2%
+              );
+            "
+          >
+            <img src="assets/imgs/features/img.png" alt="Phone" class="w-[80%]" />
+          </div>
+          <div class="content bg-[#F4FDFF] rounded-2xl md:p-6 p-4">
+            <div class="title flex items-center justify-center gap-4 mb-4">
+              <img src="assets/imgs/check.svg" alt="Icon" class="w-12 h-12" />
+              <h2
+                class="text-[24px] md:text-[32px] font-semibold text-black text-right mb-0"
+              >
+                مزايا تجعل تنقلِك أكثر راحة وأمانًا
+              </h2>
+            </div>
+            <div class="content-list space-y-2">
+                <div class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 ">
+                    <div>
+                        <img src="assets/imgs/features/safe.svg" alt="Icon" class="md:w-10 w-12 md:h-10 h-12" />
+                    </div>
+                    <div class="text-right flex flex-col gap-1">
+                        <h3 class="font-bold md:text-[21px] text-[16px]">رحلات آمنة بقيادة نسائية 100٪</h3>
+                        <p class="text-[#2A292D] md:text-[18px] text-[14px] font-regular">كل السائقات معتمدات وموثّقات لتستمتعي بمشوار آمن يبعث على الاطمئنان دائمًا.</p>
+                    </div>
+            </div>
+                <div class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 ">
+                    <div>
+                        <img src="assets/imgs/features/private.svg" alt="Icon" class="md:w-10 w-8 md:h-10 h-8" />
+                    </div>
+                    <div class="text-right flex flex-col gap-1">
+                        <h3 class="font-bold md:text-[21px] text-[16px]">خصوصية وراحة في كل مشوار</h3>
+                        <p class="text-[#2A292D] md:text-[18px] text-[14px] font-regular">خدمة مخصّصة للنساء فقط — خصوصيتك أولويتنا.</p>
+                    </div>
+            </div>
+                <div class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 ">
+                    <div>
+                        <img src="assets/imgs/features/easy.svg" alt="Icon" class="md:w-10 w-12 md:h-10 h-12" />
+                    </div>
+                    <div class="text-right flex flex-col gap-1">
+                        <h3 class="font-bold md:text-[21px] text-[16px]">سهولة الحجز وتتبع الرحلة</h3>
+                        <p class="text-[#2A292D] md:text-[18px] text-[14px] font-regular">اختاري موقعك، تابعي رحلتك مباشرة، وتواصلي مع السائقة بسهولة.</p>
+                    </div>
+            </div>
+                <div class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 ">
+                    <div>
+                        <img src="assets/imgs/features/support.svg" alt="Icon" class="md:w-10 w-8 md:h-10 h-8" />
+                    </div>
+                    <div class="text-right flex flex-col gap-1">
+                        <h3 class="font-bold md:text-[21px] text-[16px]">خدمة دعم فني 24-7</h3>
+                        <p class="text-[#2A292D] md:text-[18px] text-[14px] font-regular">920009771</p>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6 bg-primary">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-primary text-center mb-12"
+        >
+          كيف يعمل وصليني
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Video Section -->
+          <div class="video-container">
+            <div class="relative">
+              <div class="video-controls">
+                <button class="video-control-btn" title="Rewind 15 seconds">
+                  <span>15</span>
+                </button>
+                <button class="video-control-btn play-btn" title="Play">
+                  <i class="fas fa-play"></i>
+                </button>
+                <button class="video-control-btn" title="Forward 15 seconds">
+                  <span>15</span>
+                </button>
+              </div>
+              <div class="video-views">3.4M</div>
+            </div>
+            <div class="video-title">
+              <p>طريقة صرف الأرباح والتواصل مع الدعم الفني</p>
+            </div>
+          </div>
+
+          <!-- Cards Section -->
+          <div class="space-y-4">
+            <div class="how-it-works-card active">
+              <div class="flex items-start gap-4">
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-800 mb-2">
+                    طريقة صرف الأرباح والتواصل مع الدعم الفني
+                  </h3>
+                  <p class="text-gray-600 text-sm">
+                    تعرف على كيفية متابعة أرباحك وسحبها بكل سهولة، بالإضافة إلى
+                    طرق التواصل مع فريق الدعم الفني للحصول على المساعدة والإجابة
+                    عن استفساراتك في أي وقت.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="how-it-works-card">
+              <div class="flex items-center gap-4">
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800">
+                  طريقة استقبال وقبول الرحلات
+                </h3>
+              </div>
+            </div>
+
+            <div class="how-it-works-card">
+              <div class="flex items-center gap-4">
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800">
+                  طريقة التسجيل ككابتن في وصليني
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-12">
+          تجارب حقيقية - موثوق من آلاف الراكبات في المملكة
+        </h2>
+
+        <div class="owl-carousel owl-theme max-w-6xl mx-auto">
+          <div class="testimonial-card">
+            <img
+              src="https://via.placeholder.com/80"
+              alt="نورة العبد الله"
+              class="rounded-full object-cover profile-img"
+            />
+            <h4>نورة العبدالله - الرياض</h4>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p>
+              رحلتي مع وصليني كانت آمنة ومريحة جدا. السائقة محترفة والتواصل واضح
+              من بداية الطلب.
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="https://via.placeholder.com/80"
+              alt="فاطمة أحمد"
+              class="rounded-full object-cover profile-img"
+            />
+            <h4>فاطمة أحمد - جدة</h4>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p>
+              مريحة جداً وآمنة. التطبيق سهل الاستخدام والحجز سريع. أفضل تطبيق
+              نقل للنساء في السعودية!
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="https://via.placeholder.com/80"
+              alt="سارة محمد"
+              class="rounded-full object-cover profile-img"
+            />
+            <h4>سارة محمد - الدمام</h4>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p>
+              خدمة ممتازة! السائقات محترفات والمركبات نظيفة ومريحة. أنا أستخدمها
+              بانتظام وأوصي بها.
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="https://via.placeholder.com/80"
+              alt="مريم خالد"
+              class="rounded-full object-cover profile-img"
+            />
+            <h4>مريم خالد - الرياض</h4>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p>
+              تطبيق رائع! خصوصية وأمان في كل رحلة. السائقات مهذبات والخدمة
+              سريعة. شكراً وصليني!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-0 px-6 pb-6">
+      <div class="container mx-auto">
+        <div class="footer-container">
+          <!-- Top Section -->
+          <div class="footer-top">
+            <!-- Right Side - Logo and Social -->
+            <div class="footer-logo-section">
+              <div class="footer-logo">
+                <img
+                  src="assets/imgs/logo.svg"
+                  alt="وصليني"
+                  class="h-8 w-auto"
+                />
+                <span>وصليني</span>
+              </div>
+              <p class="text-gray-700 text-sm">
+                نقل نسائي آمن بكل راحة وخصوصية.
+              </p>
+              <div class="footer-social">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-x-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Left Side - App Buttons -->
+            <div class="footer-app-buttons">
+              <a href="#" class="footer-app-button">
+                <i class="fab fa-apple text-2xl"></i>
+                <span>تنزيل من متجر التطبيقات</span>
+              </a>
+              <a href="#" class="footer-app-button">
+                <i class="fab fa-google-play text-2xl"></i>
+                <span>أحصل عليه على Google Play</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Section -->
+          <div class="footer-bottom">
+            <div class="footer-links">
+              <a href="#">سياسة الخصوصية</a>
+              <a href="#">الشروط والاحكام</a>
+            </div>
+            <p class="footer-copyright">2025 جميع الحقوق محفوظة - وصليني</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
