@@ -1280,6 +1280,7 @@ section h2 {
   color: #1f2937;
   white-space: nowrap;
   order: 1;
+  padding: 0.875rem 1rem !important;
 }
 
 .saudi-flag {
