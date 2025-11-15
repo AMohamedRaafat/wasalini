@@ -730,7 +730,8 @@ nav .container {
   position: relative;
   overflow: hidden;
 }
-.owl-item.active .testimonial-card {
+
+.testimonial-card.centered {
   background-color: #f6fdff !important;
 }
 

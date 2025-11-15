@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     // Initialize Owl Carousel
     $(".owl-carousel").owlCarousel({
-        loop: true,
+        loop: false,
         margin: 30,
         nav: true,
         dots: true,
@@ -55,10 +55,86 @@ $(document).ready(function () {
             '<i class="fas fa-chevron-right"></i>',
             '<i class="fas fa-chevron-left"></i>',
         ],
-
+        onChanged: function (event) {
+            updateCarouselBackgrounds(event);
+        },
+        onInitialized: function (event) {
+            updateCarouselBackgrounds(event);
+        },
+        onTranslated: function (event) {
+            updateCarouselBackgrounds(event);
+        }
     });
 
+    // Function to update carousel item backgrounds
+    function updateCarouselBackgrounds(event) {
+        // Use setTimeout to ensure DOM is updated
+        setTimeout(function () {
+            var $carousel = $(event.target);
+            if (!$carousel || $carousel.length === 0) return;
 
+            var $items = $carousel.find('.owl-item');
+
+            // Remove centered class from all cards first
+            $items.find('.testimonial-card').removeClass('centered');
+
+            // Check if we're on desktop (1024px+)
+            var isDesktop = $(window).width() >= 1024;
+
+            if (isDesktop) {
+                // First, try to find item with 'center' class (Owl Carousel adds this)
+                var $centerItem = $items.filter('.center');
+
+                // If no center class, find the item closest to viewport center
+                if ($centerItem.length === 0) {
+                    var $stageOuter = $carousel.find('.owl-stage-outer');
+
+                    if ($stageOuter.length > 0) {
+                        var stageOuterWidth = $stageOuter.width();
+                        var stageOuterOffset = $stageOuter.offset();
+
+                        if (stageOuterOffset) {
+                            var centerX = stageOuterOffset.left + (stageOuterWidth / 2);
+                            var minDistance = Infinity;
+
+                            // Check all items, not just active ones
+                            $items.each(function () {
+                                var $item = $(this);
+                                var itemOffset = $item.offset();
+
+                                if (itemOffset) {
+                                    var itemWidth = $item.width();
+                                    var itemCenterX = itemOffset.left + (itemWidth / 2);
+                                    var distance = Math.abs(centerX - itemCenterX);
+
+                                    if (distance < minDistance) {
+                                        minDistance = distance;
+                                        $centerItem = $item;
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+
+                // Apply centered class to the centered item
+                if ($centerItem && $centerItem.length > 0) {
+                    var $centerCard = $centerItem.find('.testimonial-card');
+                    if ($centerCard.length > 0) {
+                        $centerCard.addClass('centered');
+                    }
+                }
+            }
+        }, 100);
+    }
+
+    // Update backgrounds on window resize (for responsive changes)
+    $(window).on('resize', function () {
+        $('.owl-carousel').each(function () {
+            var event = { target: this };
+            updateCarouselBackgrounds(event);
+        });
+    });
 
     // How It Works Card Accordion
     $(".how-it-works-card").on("click", function () {
