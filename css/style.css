@@ -8,6 +8,7 @@
 body {
   overflow-x: hidden;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* Scroll Animation Classes */
@@ -186,7 +187,7 @@ nav .container {
 }
 
 .drawer-app-buttons {
-  width:100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,7 +306,6 @@ nav .container {
   left: 25%;
   bottom: 40px;
   z-index: 5;
-  width: 500x;
   height: 300px;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
   animation: floatLeft 8s ease-in-out infinite;
@@ -317,7 +317,6 @@ nav .container {
   bottom: 40px;
   z-index: 99;
   animation: floatRight 8s ease-in-out infinite;
-  width: 350px !important;
   height: 350px !important;
 }
 
@@ -722,7 +721,7 @@ nav .container {
 }
 
 .testimonial-card {
-  background: #f6fdff;
+  background-color: #fff;
   padding: 3rem 2.5rem;
   border-radius: 1rem;
   margin: 1rem;
@@ -730,6 +729,9 @@ nav .container {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+.owl-item.active .testimonial-card {
+  background-color: #f6fdff !important;
 }
 
 .testimonial-card .profile-img {
@@ -889,6 +891,19 @@ footer {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Features Section - Equal Height */
+#features .grid.items-stretch > .phone,
+#features .grid.items-stretch > .content {
+  height: 100%;
+  min-height: 100%;
+}
+
+#features .grid.items-stretch > .content {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Section Titles */
@@ -1038,6 +1053,12 @@ section h2 {
     font-size: 16px;
     font-weight: 600;
     margin: 20px 0;
+  }
+  .how-it-works-card .arrow-icon {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    font-size: 16px !important;
   }
 }
 

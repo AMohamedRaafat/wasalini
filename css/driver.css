@@ -455,6 +455,11 @@ section h2 {
 }
 
 /* Responsive Design */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .header-wrapper {
+    height: 850px !important;
+  }
+}
 @media (max-width: 1024px) {
   .phone-container {
     min-height: 450px;
@@ -468,7 +473,7 @@ section h2 {
 
 @media (max-width: 768px) {
   .header-wrapper {
-    height: 650px !important;
+    height: 960px !important;
   }
 
   .phone-img {
@@ -561,9 +566,21 @@ section h2 {
     font-size: 12px !important;
     margin-bottom: 0;
   }
+  .icon {
+    font-size: 16px !important;
+  }
 }
 
+@media (min-width: 1600px) {
+  .header-wrapper {
+    height: 1000px !important;
+  }
+}
 @media (max-width: 480px) {
+  .header-wrapper {
+    height: 650px !important;
+  }
+
   .hero-badge {
     padding: 5px 10px !important;
   }
@@ -594,6 +611,12 @@ section h2 {
 
   .feature-description {
     font-size: 0.9375rem;
+  }
+  .how-it-works-card .arrow-icon {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    font-size: 16px !important;
   }
 }
 
@@ -904,7 +927,6 @@ section h2 {
   position: relative;
   border-radius: 1.75rem;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   max-height: 0;

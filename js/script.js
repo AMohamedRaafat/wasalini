@@ -24,12 +24,7 @@ $(document).ready(function () {
         e.preventDefault();
         var target = $(this.getAttribute("href"));
         if (target.length) {
-            $("html, body").animate(
-                {
-                    scrollTop: target.offset().top - 80,
-                },
-                800
-            );
+            target[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 
@@ -51,7 +46,7 @@ $(document).ready(function () {
             },
             1024: {
                 items: 1,
-                stagePadding: 200,
+                stagePadding: 420,
 
             },
         },
@@ -60,7 +55,10 @@ $(document).ready(function () {
             '<i class="fas fa-chevron-right"></i>',
             '<i class="fas fa-chevron-left"></i>',
         ],
+
     });
+
+
 
     // How It Works Card Accordion
     $(".how-it-works-card").on("click", function () {
