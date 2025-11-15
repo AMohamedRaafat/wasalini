@@ -52,8 +52,7 @@ $(document).ready(function () {
         },
         rtl: true,
         navText: [
-            '<i class="fas fa-chevron-right"></i>',
-            '<i class="fas fa-chevron-left"></i>',
+            '',''
         ],
         onChanged: function (event) {
             updateCarouselBackgrounds(event);
