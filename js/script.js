@@ -32,8 +32,8 @@ $(document).ready(function () {
     $(".owl-carousel").owlCarousel({
         loop: false,
         margin: 30,
-        nav: true,
-        dots: true,
+        nav: false,
+        dots: false,
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
@@ -52,8 +52,7 @@ $(document).ready(function () {
         },
         rtl: true,
         navText: [
-            '<i class="fas fa-chevron-right"></i>',
-            '<i class="fas fa-chevron-left"></i>',
+            '',''
         ],
         onChanged: function (event) {
             updateCarouselBackgrounds(event);
