@@ -52,7 +52,7 @@ $(document).ready(function () {
         },
         rtl: true,
         navText: [
-            '',''
+            '', ''
         ],
         onChanged: function (event) {
             updateCarouselBackgrounds(event);

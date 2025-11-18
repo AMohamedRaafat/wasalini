@@ -1072,7 +1072,14 @@ section h2 {
     padding: 2.5rem 1.5rem 2rem;
   }
 }
-
+#download {
+  @media (min-width: 768px) {
+    background-image: url("../assets/imgs/download/download-bg.png");
+    background-size: 70% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+}
 /* Modal Styles */
 .modal-overlay {
   position: fixed;
