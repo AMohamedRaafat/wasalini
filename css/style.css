@@ -1544,3 +1544,187 @@ section h2 {
   background: white;
   transform: scale(1.3);
 }
+
+/* Video Animation Styles for FAQ Section */
+/* Exit animations */
+@keyframes videoSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-15px) scale(0.98);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+}
+
+@keyframes desktopVideoSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-25px) scale(0.98);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95);
+  }
+}
+
+/* Animation classes */
+.video-container.exiting {
+  animation: videoSlideOut 0.5s ease-out forwards;
+}
+
+#main-video-container.exiting .video-wrapper {
+  animation: desktopVideoSlideOut 0.5s ease-out forwards;
+}
+
+/* Loading state */
+#main-video-container.loading .video-wrapper {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+/* Video container styles */
+.how-it-works-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-2px);
+}
+
+.how-it-works-card.active {
+  border-color: #23b1c8;
+  background-color: rgba(35, 177, 200, 0.05);
+}
+
+/* Mobile video containers */
+.mobile-video-container {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  display: block; /* Show by default */
+}
+
+@media (min-width: 768px) {
+  .mobile-video-container {
+    display: none; /* Hide on desktop */
+  }
+}
+
+.mobile-video-container.active {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
+}
+
+.mobile-video-container .video-wrapper {
+  transition: all 0.3s ease;
+}
+
+.mobile-video-container.exiting {
+  animation: videoSlideOut 0.5s ease-out forwards;
+}
+
+.mobile-video-container.loading .video-wrapper {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.mobile-video-container video {
+  width: 100%;
+  height: 256px; /* h-64 */
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Exit animations for mobile */
+@keyframes mobileVideoSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px) scale(0.98);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+.mobile-video-container.exiting {
+  animation: mobileVideoSlideOut 0.4s ease-out forwards;
+}
+
+.mobile-video-container.loading .video-wrapper {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.how-it-works-card .video-container {
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.how-it-works-card .video-container video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Desktop video container */
+#main-video-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0 !important;
+  visibility: hidden !important;
+  max-height: 0 !important;
+  transition: opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  #main-video-container {
+    display: none; /* Hide on mobile */
+  }
+}
+
+#main-video-container.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-height: 1000px !important;
+}
+
+#main-video-container .video-wrapper {
+  transition: all 0.3s ease;
+}
+
+#main-video-container video {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Arrow icon rotation */
+.how-it-works-card.active .arrow-icon {
+  transform: rotate(-90deg);
+}
+
+.how-it-works-card .arrow-icon {
+  transition: transform 0.3s ease;
+}

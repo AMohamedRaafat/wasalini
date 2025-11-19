@@ -481,15 +481,18 @@
             >
               كيف يعمل تطبيق شركاء وصليني
             </h2>
+            
+            <!-- Card 1 -->
             <div
               class="how-it-works-card active scroll-animate fade-in delay-100"
               data-video-card="true"
+              data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              id="card-1"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-1">
-                  <h3
-                    class="font-bold text-[14px] md:text-[16px] text-[#02140D]"
-                  >
+                  <h3 class="font-bold text-xl text-[#02140D]">
                     طريقة صرف الأرباح والتواصل مع الدعم الفني
                   </h3>
                   <div class="card-description">
@@ -505,22 +508,27 @@
                 </div>
               </div>
             </div>
-            <div
-              class="video-container shadow-none block md:hidden w-full h-full"
-            >
-              <video
-                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-                controls
-                class="w-full h-full object-cover rounded-xl"
-              ></video>
+            <!-- Mobile Video Container for Card 1 -->
+            <div class="mobile-video-container video-container shadow-none w-full h-full mt-4" data-video-for="card-1">
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
             </div>
 
-            <div class="how-it-works-card scroll-animate fade-in delay-200">
+            <!-- Card 2 -->
+            <div class="how-it-works-card scroll-animate fade-in delay-200" 
+                 data-video-card="true"
+                 data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                 data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                 id="card-2"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-1">
-                  <h3
-                    class="font-bold text-[14px] md:text-[16px] text-[#02140D]"
-                  >
+                  <h3 class="font-bold text-xl text-[#02140D]">
                     طريقة استقبال وقبول الرحلات
                   </h3>
                   <div class="card-description">
@@ -536,7 +544,24 @@
                 </div>
               </div>
             </div>
-            <div class="how-it-works-card scroll-animate fade-in delay-300">
+            <!-- Mobile Video Container for Card 2 -->
+            <div class="mobile-video-container video-container shadow-none w-full h-full mt-4" data-video-for="card-2">
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="how-it-works-card scroll-animate fade-in delay-300"
+                 data-video-card="true"
+                 data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                 data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                 id="card-3"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-1">
                   <h3 class="font-bold text-xl text-[#02140D]">
@@ -555,15 +580,30 @@
                 </div>
               </div>
             </div>
+            <!-- Mobile Video Container for Card 3 -->
+            <div class="mobile-video-container video-container shadow-none w-full h-full mt-4" data-video-for="card-3">
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
+            </div>
           </div>
+          
+          <!-- Desktop Video Section -->
           <div
-            class="video-container desktop-video hidden md:block w-full h-full"
+            class="video-container w-full h-full"
+            id="main-video-container"
           >
-            <video
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-              controls
-              class="w-full h-full object-cover rounded-xl"
-            ></video>
+            <div class="video-wrapper relative w-full h-full">
+              <video
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                controls
+                class="w-full h-full object-cover rounded-xl"
+              ></video>
+            </div>
           </div>
         </div>
       </div>

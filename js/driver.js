@@ -113,29 +113,141 @@ $(document).ready(function () {
         });
     }
 
-    // How It Works Accordion Logic
+    // How It Works Card Accordion with Dynamic Video Switching
     $(".how-it-works-card").on("click", function () {
-        const $card = $(this);
-        const isActive = $card.hasClass("active");
-        const hasVideo = $card.data("video-card") === true;
+        const $clickedCard = $(this);
+        const isActive = $clickedCard.hasClass("active");
+        const hasVideo = $clickedCard.data("video-card") === true;
+        const videoSrc = $clickedCard.data("video");
+        const mobileVideoSrc = $clickedCard.data("mobile-video");
 
-        // Remove active class from all cards
-        $(".how-it-works-card").removeClass("active");
-
-        // Toggle active class on clicked card
-        if (!isActive) {
-            $card.addClass("active");
-        }
-
-        // Handle video display
-        if (hasVideo) {
-            // Mobile video
-            $(".video-container.shadow-none").removeClass("active");
-            if (!isActive) {
-                $(".video-container.shadow-none").addClass("active");
+        if (isActive) {
+            // Card was active - deactivate it and hide videos
+            $clickedCard.removeClass("active");
+            hideAllVideos();
+        } else {
+            // Card was not active - activate it and show videos
+            // Remove active class from all other cards first
+            $(".how-it-works-card").removeClass("active");
+            $clickedCard.addClass("active");
+            
+            // Handle video switching if card has video
+            if (hasVideo) {
+                handleVideoSwitching($clickedCard, videoSrc, mobileVideoSrc);
             }
         }
     });
+
+    // Handle video switching for both desktop and mobile
+    function handleVideoSwitching($item, desktopVideoSrc, mobileVideoSrc) {
+        const $desktopContainer = $("#main-video-container");
+        const isDesktop = window.innerWidth >= 768;
+        const cardId = $item.attr('id');
+        const $mobileContainer = $(`.mobile-video-container[data-video-for="${cardId}"]`);
+
+        if (isDesktop) {
+            // Desktop video handling
+            if ($desktopContainer.hasClass("active")) {
+                // Add exit animation
+                $desktopContainer.addClass("exiting");
+                
+                setTimeout(function() {
+                    $desktopContainer.removeClass("exiting active");
+                    $desktopContainer.find("video").attr("src", desktopVideoSrc);
+                    $desktopContainer.find("video")[0].load();
+                    
+                    setTimeout(function() {
+                        $desktopContainer.addClass("active");
+                    }, 100);
+                }, 500);
+            } else {
+                // First time loading - hide all mobile videos and show desktop
+                $(".mobile-video-container").removeClass("active");
+                $desktopContainer.find("video").attr("src", desktopVideoSrc);
+                $desktopContainer.addClass("active");
+            }
+        } else {
+            // Mobile video handling - show only the video for this specific card
+            // Hide all other mobile videos first
+            $(".mobile-video-container").removeClass("active");
+            
+            if ($mobileContainer.hasClass("active")) {
+                // Add exit animation
+                $mobileContainer.addClass("exiting");
+                
+                setTimeout(function() {
+                    $mobileContainer.removeClass("exiting active");
+                    $mobileContainer.find("video").attr("src", mobileVideoSrc);
+                    $mobileContainer.find("video")[0].load();
+                    
+                    setTimeout(function() {
+                        $mobileContainer.addClass("active");
+                    }, 100);
+                }, 500);
+            } else {
+                // First time loading - hide desktop and show this mobile video
+                $desktopContainer.removeClass("active");
+                $mobileContainer.find("video").attr("src", mobileVideoSrc);
+                $mobileContainer.addClass("active");
+            }
+        }
+    }
+
+    // Hide all videos
+    function hideAllVideos() {
+        $("#main-video-container").removeClass("active");
+        $(".mobile-video-container").removeClass("active");
+    }
+    
+    // Handle window resize for responsive behavior
+    $(window).resize(function() {
+        const width = window.innerWidth;
+        const $desktopContainer = $("#main-video-container");
+        const $mobileContainer = $(".mobile-video-container");
+        const activeItem = $(".how-it-works-card.active");
+        
+        if (width >= 768 && activeItem.length) {
+            // Switch to desktop view
+            const desktopVideoSrc = activeItem.data("video");
+            if (desktopVideoSrc) {
+                // Hide mobile video
+                $mobileContainer.removeClass("active");
+                // Show desktop video with proper source
+                $desktopContainer.find("video").attr("src", desktopVideoSrc);
+                $desktopContainer.addClass("active");
+            }
+        } else if (width < 768 && activeItem.length) {
+            // Switch to mobile view
+            const mobileVideoSrc = activeItem.data("mobile-video");
+            if (mobileVideoSrc) {
+                // Hide desktop video
+                $desktopContainer.removeClass("active");
+                // Show mobile video with proper source
+                $mobileContainer.find("video").attr("src", mobileVideoSrc);
+                $mobileContainer.addClass("active");
+            }
+        }
+    });
+    
+    // Initialize video visibility on page load
+    const $initialActiveCard = $(".how-it-works-card.active");
+    if ($initialActiveCard.length && $initialActiveCard.data("video-card") === true) {
+        const desktopVideoSrc = $initialActiveCard.data("video");
+        const mobileVideoSrc = $initialActiveCard.data("mobile-video");
+        const isDesktop = window.innerWidth >= 768;
+        
+        if (isDesktop) {
+            // Show desktop video
+            $("#main-video-container").find("video").attr("src", desktopVideoSrc);
+            $("#main-video-container").addClass("active");
+        } else {
+            // Show mobile video
+            const cardId = $initialActiveCard.attr('id');
+            const $mobileContainer = $(`.mobile-video-container[data-video-for="${cardId}"]`);
+            $mobileContainer.find("video").attr("src", mobileVideoSrc);
+            $mobileContainer.addClass("active");
+        }
+    }
 
     // Scroll Animation Observer
     const observerOptions = {
