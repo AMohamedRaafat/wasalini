@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasalini - Safe Women's Transport</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-white">
+    <!-- Header Wrapper with Gradient Background -->
+    <div class="header-wrapper">
+      <!-- Navigation Header -->
+      <nav class="py-4 px-6">
+        <div
+          class="container mx-auto flex md:flex-row flex-row-reverse justify-between items-center"
+        >
+          <button id="drawer-toggle" class="text-2xl text-gray-800 lg:hidden">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <img src="assets/imgs/logo.svg" alt="Wasalini" />
+          </div>
+
+          <div class="hidden lg:flex items-center gap-8">
+            <a
+              href="#home"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >Home</a
+            >
+            <a
+              href="#features"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-black font-semibold hover:text-blue-600 transition"
+              >How It Works</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Drawer Menu -->
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <div class="drawer" id="drawer">
+        <div class="drawer-header">
+          <div class="drawer-logo">
+            <img src="assets/imgs/logo.svg" alt="Wasalini" />
+          </div>
+          <button class="drawer-close" id="drawer-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="drawer-menu">
+          <li><a href="#home" class="drawer-link">Home</a></li>
+          <li><a href="#features" class="drawer-link">Features</a></li>
+          <li><a href="#how-it-works" class="drawer-link">How It Works</a></li>
+        </ul>
+        <div class="drawer-footer">
+          <p class="drawer-copyright">© 2025 All rights reserved - Wasalini</p>
+          <div class="drawer-app-buttons">
+            <a
+              href="#"
+              class="flex-1 bg-black flex gap-2 items-center py-2 px-2 rounded-xl text-white text-start hover:bg-black/80 transition"
+            >
+              <img
+                src="./assets/imgs/play.svg"
+                alt="Google Play"
+                class="w-10 h-10"
+              />
+              <div class="flex flex-col">
+                <span class="text-[10px] md:text-[12px] font-regular"
+                  >Get it on</span
+                >
+                <span class="font-semibold text-[10px] md:text-[12px]"
+                  >Google Play</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex-1 bg-black flex gap-2 items-center py-2 px-2 rounded-xl text-white text-start hover:bg-black/80 transition"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                <path
+                  d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                />
+              </svg>
+              <div class="flex flex-col">
+                <span class="text-[10px] md:text-[12px] font-regular"
+                  >Download on</span
+                >
+                <span class="font-semibold text-[10px] md:text-[12px]"
+                  >App Store</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <section id="home" class="py-10 px-6">
+        <div class="container mx-auto">
+          <div class="text-center mb-12">
+            <div class="hero-badge">
+              <p>
+                The first delivery app exclusively for women in Saudi Arabia
+                <i class="fa-solid fa-arrow-up mr-2"></i>
+              </p>
+            </div>
+            <h1
+              class="text-4xl w-fit mx-auto md:text-6xl font-bold text-black mb-8 relative"
+            >
+              We get you there safely and comfortably
+              <img
+                src="assets/imgs/header/scratch-vector.png"
+                alt=""
+                class="absolute -bottom-6 left-0 w-[112px] h-[20px]"
+              />
+            </h1>
+            <div class="flex items-center gap-4 mb-12 justify-center">
+              <a
+                href="#"
+                class="md:flex-none flex-1 bg-black flex gap-2 items-center py-2 px-2 md:px-5 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <img
+                  src="./assets/imgs/play.svg"
+                  alt="Google Play"
+                  class="w-10 h-10"
+                />
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >Get it on</span
+                  >
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >Google Play</span
+                  >
+                </div>
+              </a>
+              <a
+                href="#"
+                class="md:flex-none flex-1 bg-black flex gap-2 items-center py-2 px-2 md:px-5 rounded-xl text-white text-start hover:bg-black/80 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="flex flex-col">
+                  <span class="text-[10px] md:text-[12px] font-regular"
+                    >Download on</span
+                  >
+                  <span class="font-semibold text-[10px] md:text-[12px]"
+                    >App Store</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Phone Images -->
+      <div class="phone-container absolute bottom-0">
+        <img
+          src="assets/imgs/header/float-img-left.png"
+          alt=""
+          class="float-img-left block"
+        />
+        <img
+          src="assets/imgs/header/phone.png"
+          alt="Wasalini App"
+          class="phone-img max-w-xs md:max-w-md z-10"
+        />
+        <img
+          src="assets/imgs/header/float-img-right.png"
+          alt=""
+          class="float-img-right block"
+        />
+      </div>
+    </div>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- White Badge -->
+          <div class="trust-badge rounded-full scroll-animate slide-up">
+            <div class="trust-icon">
+              <img src="assets/imgs/users.svg" alt="Trust Icon" />
+            </div>
+            <p>Over <span>1.7 million</span> users in the Kingdom</p>
+          </div>
+          <div
+            class="text-center w-fit mx-auto scroll-animate fade-in delay-200"
+          >
+            <h1
+              class="text-[24px] md:text-[36px] font-bold text-black text-center mb-4"
+            >
+              Trusted by thousands of riders across the Kingdom
+            </h1>
+            <p class="text-[16px] md:text-[20px] md:w-[500px] mx-auto">
+              Wasalini is a women-only transport service that offers comfortable
+              trips with certified drivers verified via Absher and the Transport
+              Authority. Enjoy a secure travel experience on every trip.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sign-up-section">
+      <button
+        id="signup-btn"
+        class="bg-[#23B1C8] hover:bg-[#23B1C8]/80 transition flex items-center gap-2 text-white py-2 px-4 rounded-full scroll-animate scale-in"
+      >
+        <span class="text-[12px] md:text-[14px] font-semibold"
+          >Sign up to receive offers</span
+        >
+
+        <img src="assets/imgs/fire.svg" alt="Fire" />
+      </button>
+    </section>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="registration-overlay">
+      <div
+        class="registration-modal border-t-4 md:border-4 border-[#BFF7FF]"
+        id="registration-modal"
+      >
+        <button class="modal-close" id="close-registration">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-illustration">
+          <img src="./assets/imgs/modals/like.svg" alt="Modal Send" />
+        </div>
+        <h2 class="modal-title">Sign up to receive the latest offers</h2>
+        <p class="modal-description">
+          Fill in your details to join our customer list and receive the best
+          discounts and offers as they become available.
+        </p>
+        <form id="registration-form" class="modal-form">
+          <div class="form-group">
+            <label for="phone-number">Phone number</label>
+            <div class="phone-input-wrapper">
+              <div class="country-code">
+                <span class="saudi-flag"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_272_15313)">
+                      <path
+                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                        fill="#6DA544"
+                      />
+                      <path
+                        d="M6.78125 14.3477C6.78125 15.2121 7.48203 15.9129 8.34645 15.9129H13.0421C13.0421 16.6332 13.6261 17.2172 14.3465 17.2172H15.9117C16.632 17.2172 17.216 16.6332 17.216 15.9129V14.3477H6.78125Z"
+                        fill="#F0F0F0"
+                      />
+                      <path
+                        d="M17.3462 6.7832V10.4354C17.3462 11.0108 16.8781 11.4789 16.3027 11.4789V13.0441C17.7412 13.0441 18.9114 11.8738 18.9114 10.4354V6.7832H17.3462Z"
+                        fill="#F0F0F0"
+                      />
+                      <path
+                        d="M6.12942 10.4354C6.12942 11.0108 5.66133 11.4789 5.08594 11.4789V13.0441C6.52439 13.0441 7.69462 11.8738 7.69462 10.4354V6.7832H6.12942V10.4354Z"
+                        fill="#F0F0F0"
+                      />
+                      <path
+                        d="M16.5652 6.7832H15V10.4354H16.5652V6.7832Z"
+                        fill="#F0F0F0"
+                      />
+                      <path
+                        d="M12.6505 8.87017C12.6505 9.01403 12.5334 9.13103 12.3896 9.13103C12.2458 9.13103 12.1287 9.01398 12.1287 8.87017V6.7832H10.5635V8.87017C10.5635 9.01403 10.4465 9.13103 10.3027 9.13103C10.1589 9.13103 10.0418 9.01398 10.0418 8.87017V6.7832H8.47656V8.87017C8.47656 9.87709 9.29575 10.6963 10.3027 10.6963C10.6905 10.6963 11.0501 10.5744 11.3462 10.3674C11.6422 10.5744 12.0019 10.6963 12.3896 10.6963C12.4677 10.6963 12.5445 10.6908 12.62 10.6812C12.5091 11.1382 12.0976 11.4789 11.607 11.4789V13.0441C13.0455 13.0441 14.2157 11.8738 14.2157 10.4354V8.87017V6.7832H12.6505V8.87017H12.6505Z"
+                        fill="#F0F0F0"
+                      />
+                      <path
+                        d="M10.8244 11.4785H8.47656V13.0437H10.8244V11.4785Z"
+                        fill="#F0F0F0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_272_15313">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <span>+966</span>
+              </div>
+              <input
+                type="tel"
+                id="phone-number"
+                name="phone"
+                placeholder="000000000"
+                maxlength="9"
+                required
+              />
+            </div>
+            <span class="error-message" id="phone-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <select id="city" name="city">
+              <option value="">Choose city</option>
+              <option value="riyadh">Riyadh</option>
+              <option value="jeddah">Jeddah</option>
+              <option value="dammam">Dammam</option>
+              <option value="khobar">Al Khobar</option>
+              <option value="makkah">Makkah</option>
+              <option value="madinah">Madinah</option>
+              <option value="taif">Taif</option>
+              <option value="abha">Abha</option>
+              <option value="tabuk">Tabuk</option>
+              <option value="buraidah">Buraidah</option>
+              <option value="khamis">Khamis Mushait</option>
+              <option value="hail">Hail</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-overlay">
+      <div class="success-modal border-4 border-[#BFF7FF]" id="success-modal">
+        <button class="modal-close" id="close-success">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="success-illustration">
+          <img src="./assets/imgs/modals/success.svg" alt="Success" />
+        </div>
+        <h2 class="success-title">
+          <span class="confetti">🎉</span>
+          Thank you!
+        </h2>
+        <p class="success-message">You have been successfully registered.</p>
+        <p class="success-description">
+          You will receive exclusive offers and discounts as they become
+          available.
+        </p>
+      </div>
+    </div>
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-white overflow-hidden">
+      <div class="container mx-auto">
+        <div
+          class="md:w-[80%] w-full mx-auto text-center bg-[#33C1D9] py-2 px-4 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch"
+        >
+          <div
+            class="phone px-4 rounded-2xl flex items-end justify-center pt-10 scroll-animate slide-right h-full"
+            style="
+              background: linear-gradient(
+                347.19deg,
+                #f1fdff 21.44%,
+                #b1f4ff 57.2%
+              );
+            "
+          >
+            <img
+              src="assets/imgs/features/img.png"
+              alt="Phone"
+              class="w-[80%]"
+            />
+          </div>
+          <div
+            class="content bg-[#F4FDFF] rounded-2xl md:p-6 p-4 scroll-animate slide-left h-full"
+          >
+            <div class="title flex items-center justify-center gap-4 mb-4">
+              <img src="assets/imgs/check.svg" alt="Icon" class="w-12 h-12" />
+              <h2
+                class="text-[24px] md:text-[32px] font-semibold text-black text-start mb-0"
+              >
+                Features That Make Your Ride More Comfortable & Safer
+              </h2>
+            </div>
+            <div class="content-list space-y-4 mt-10">
+              <div
+                class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 scroll-animate fade-in delay-100"
+              >
+                <div>
+                  <img
+                    src="assets/imgs/features/safe.svg"
+                    alt="Icon"
+                    class="md:w-16 w-12 md:h-12 h-12"
+                  />
+                </div>
+                <div class="text-start flex flex-col gap-1">
+                  <h3 class="font-bold md:text-[21px] text-[16px]">
+                    100% Female-Driven Safe Rides
+                  </h3>
+                  <p
+                    class="text-[#2A292D] md:text-[18px] text-[14px] font-regular"
+                  >
+                    All drivers are verified and documented so you can enjoy a
+                    safe, reassuring ride every time.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 scroll-animate fade-in delay-200"
+              >
+                <div>
+                  <img
+                    src="assets/imgs/features/private.svg"
+                    alt="Icon"
+                    class="md:w-10 w-8 md:h-10 h-8"
+                  />
+                </div>
+                <div class="text-start flex flex-col gap-1">
+                  <h3 class="font-bold md:text-[21px] text-[16px]">
+                    Privacy & Comfort on Every Ride
+                  </h3>
+                  <p
+                    class="text-[#2A292D] md:text-[18px] text-[14px] font-regular"
+                  >
+                    A women-only service — your privacy is our priority.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 scroll-animate fade-in delay-300"
+              >
+                <div>
+                  <img
+                    src="assets/imgs/features/easy.svg"
+                    alt="Icon"
+                    class="md:w-16 w-12 md:h-16 h-12"
+                  />
+                </div>
+                <div class="text-start flex flex-col gap-1">
+                  <h3 class="font-bold md:text-[21px] text-[16px]">
+                    Easy Booking & Trip Tracking
+                  </h3>
+                  <p
+                    class="text-[#2A292D] md:text-[18px] text-[14px] font-regular"
+                  >
+                    Choose your pickup, track your trip live, and communicate
+                    with the driver easily.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="content-list-item flex items-center gap-5 bg-white rounded-2xl md:p-4 p-2 scroll-animate fade-in delay-400"
+              >
+                <div>
+                  <img
+                    src="assets/imgs/features/support.svg"
+                    alt="Icon"
+                    class="md:w-10 w-8 md:h-10 h-8"
+                  />
+                </div>
+                <div class="text-start flex flex-col gap-1">
+                  <h3 class="font-bold md:text-[21px] text-[16px]">
+                    24/7 Support
+                  </h3>
+                  <p
+                    class="text-[#2A292D] md:text-[18px] text-[14px] font-regular"
+                  >
+                    920009771
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6 how-it-works">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Cards Section -->
+          <div class="space-y-4">
+            <h2
+              class="text-[24px] md:text-[32px] font-bold text-black text-center mb-4 text-start scroll-animate slide-up"
+            >
+              How Wasalini Works
+            </h2>
+
+            <!-- Card 1 -->
+            <div
+              class="how-it-works-card active scroll-animate fade-in delay-100"
+              data-video-card="true"
+              data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              id="card-1"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-800">
+                    Payouts and Support
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-gray-600 text-sm">
+                      Learn how to track and withdraw your earnings easily, and
+                      find ways to contact the support team for help and answers
+                      to your questions at any time.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile Video Container for Card 1 -->
+            <div
+              class="mobile-video-container video-container shadow-none w-full h-full mt-4"
+              data-video-for="card-1"
+            >
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="how-it-works-card scroll-animate fade-in delay-200"
+              data-video-card="true"
+              data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              id="card-2"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-800">
+                    Receiving & Accepting Trips
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-gray-600 text-sm">
+                      Learn how to receive trip requests from riders, review
+                      trip details before accepting, and manage your daily
+                      schedule efficiently to increase your earnings.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile Video Container for Card 2 -->
+            <div
+              class="mobile-video-container video-container shadow-none w-full h-full mt-4"
+              data-video-for="card-2"
+            >
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="how-it-works-card scroll-animate fade-in delay-300"
+              data-video-card="true"
+              data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              data-mobile-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              id="card-3"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-800">
+                    How to Register as a Driver
+                  </h3>
+                  <div class="card-description">
+                    <p class="text-gray-600 text-sm">
+                      See the steps to register as a driver, the requirements
+                      for approval, and how to complete your profile and start
+                      working.
+                    </p>
+                  </div>
+                </div>
+                <div class="arrow-icon">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile Video Container for Card 3 -->
+            <div
+              class="mobile-video-container video-container shadow-none w-full h-full mt-4"
+              data-video-for="card-3"
+            >
+              <div class="video-wrapper relative w-full h-full">
+                <video
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                  controls
+                  class="w-full h-full object-cover rounded-xl"
+                ></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Video Section -->
+          <div class="video-container w-full h-full" id="main-video-container">
+            <div class="video-wrapper relative w-full h-full">
+              <video
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                controls
+                class="w-full h-full object-cover rounded-xl"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Download App Section -->
+    <section
+      id="download"
+      class="py-12 md:py-16 px-2 md:px-20 bg-white border-2 border-gray-200 border-l-0 border-r-0 my-12"
+    >
+      <div
+        class="container mx-auto md:mx-0 px-4 md:flex md:flex-col md:items-start md:justify-start md:w-[50%]"
+      >
+        <div class="text-center md:text-start mb-8 md:mb-12">
+          <h2
+            class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+          >
+            Download the app and start your journey easily
+          </h2>
+          <p class="text-base md:text-[18px] max-w-3xl mx-auto leading-relaxed">
+            Download the app now and enjoy an easy and fast transport
+            experience. Request your ride in seconds, track the driver live on
+            the map, and choose the payment method that suits you. Reach your
+            destination with comfort and safety every time.
+          </p>
+        </div>
+        <!-- App Download Buttons -->
+        <div class="flex flex-row items-center justify-center gap-4">
+          <a
+            href="#"
+            class="bg-black text-white rounded-lg md:px-5 px-3 py-2 flex items-center justify-center gap-4 hover:bg-gray-800 transition"
+          >
+            <img
+              src="../assets/imgs/play.svg"
+              alt="Google Play"
+              class="w-8 h-8"
+            />
+            <div class="flex flex-col">
+              <span class="text-[10px] lg:text-[12px]">Get it on</span>
+              <div class="text-[10px] lg:text-[12px] font-semibold">
+                Google play
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="bg-black text-white rounded-lg md:px-5 px-3 py-2 flex items-center justify-center gap-4 hover:bg-gray-800 transition"
+          >
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <span class="text-[10px] lg:text-[12px]">Download on</span>
+              <div class="text-[10px] lg:text-[12px] font-bold">App Store</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container mx-auto">
+        <h2
+          class="text-[20px] md:text-[24px] font-bold text-black text-center mb-12 scroll-animate slide-up"
+        >
+          Real Experiences — Trusted by thousands of riders in the Kingdom
+        </h2>
+      </div>
+
+      <div class="owl-carousel w-full scroll-animate fade-in delay-200">
+        <div class="testimonial-card">
+          <img
+            src="https://placehold.co/60x60"
+            alt="Noura Alabdullah"
+            class="rounded-full profile-img"
+          />
+          <h4>Noura Alabdullah - Riyadh</h4>
+
+          <p>
+            My ride with Wasalini was very safe and comfortable. The driver was
+            professional and communication was clear from the start.
+          </p>
+          <div class="star-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://placehold.co/60x60"
+            alt="Noura Alabdullah"
+            class="rounded-full profile-img"
+          />
+          <h4>Noura Alabdullah - Riyadh</h4>
+          <p>
+            My ride with Wasalini was very safe and comfortable. The driver was
+            professional and communication was clear from the start.
+          </p>
+          <div class="star-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://placehold.co/60x60"
+            alt="Maya Alshammari"
+            class="rounded-full profile-img"
+          />
+          <h4>Maya Alshammari - Khobar</h4>
+          <p>
+            Excellent experience — professional driver and smooth ride. The app
+            is reliable and easy to use.
+          </p>
+          <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="far fa-star"></i
+            ><i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://placehold.co/60x60"
+            alt="Huda Alqahtani"
+            class="rounded-full profile-img"
+          />
+          <h4>Huda Alqahtani - Taif</h4>
+          <p>
+            Safe and comfortable trips every time. I appreciate the privacy and
+            the friendly drivers.
+          </p>
+          <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="far fa-star"></i
+            ><i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-0 px-6 pb-6">
+      <!-- Top Section -->
+      <div class="footer-top scroll-animate slide-up">
+        <!-- Right Side - Logo and Social -->
+        <div class="footer-logo-section">
+          <div class="footer-logo">
+            <img
+              src="assets/imgs/logo.svg"
+              alt="Wasalini"
+              class="w-[138px] h-[36px]"
+            />
+          </div>
+          <p class="text-black font-bold text-sm text-center">
+            Safe women's transport with comfort and privacy.
+          </p>
+          <div class="footer-social">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"> <i class="fa-brands fa-facebook"></i> </a>
+          </div>
+        </div>
+
+        <!-- Left Side - App Buttons -->
+        <div class="flex gap-3 w-full sm:w-80">
+          <a
+            href="#"
+            class="flex-1 md:flex-none bg-black flex gap-2 items-center py-2 px-2 md:px-5 rounded-xl text-white text-start hover:bg-black/80 transition"
+          >
+            <img
+              src="./assets/imgs/play.svg"
+              alt="Google Play"
+              class="w-10 h-10"
+            />
+            <div class="flex flex-col">
+              <span class="text-[10px] md:text-[12px] font-regular"
+                >Get it on</span
+              >
+              <span class="font-semibold text-[10px] md:text-[12px]"
+                >Google Play</span
+              >
+            </div>
+          </a>
+          <a
+            href="#"
+            class="flex-1 md:flex-none bg-black flex gap-2 items-center py-2 px-2 md:px-5 rounded-xl text-white text-start hover:bg-black/80 transition"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+              <path
+                d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <span class="text-[10px] md:text-[12px] font-regular"
+                >Download on</span
+              >
+              <span class="font-semibold text-[10px] md:text-[12px]"
+                >App Store</span
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">2025 All rights reserved - Wasalini</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
