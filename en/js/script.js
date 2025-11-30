@@ -19,6 +19,14 @@ $(document).ready(function () {
         $("body").css("overflow", "auto");
     });
 
+    // Close drawer when clicking on the language switcher inside drawer
+    $(".drawer .drawer-lang-switcher a").on("click", function () {
+        $("#drawer").removeClass("active");
+        $("#drawer-overlay").removeClass("active");
+        $("body").css("overflow", "auto");
+        // allow the link to navigate normally
+    });
+
     // Smooth scroll for anchor links
     $('a[href^="#"]').on("click", function (e) {
         e.preventDefault();
