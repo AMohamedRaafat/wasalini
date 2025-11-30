@@ -138,7 +138,7 @@ $(document).ready(function () {
             // Remove active class from all other cards first
             $(".how-it-works-card").removeClass("active");
             $clickedCard.addClass("active");
-            
+
             // Handle video switching if card has video
             if (hasVideo) {
                 handleVideoSwitching($clickedCard, videoSrc, mobileVideoSrc);
@@ -158,13 +158,13 @@ $(document).ready(function () {
             if ($desktopContainer.hasClass("active")) {
                 // Add exit animation
                 $desktopContainer.addClass("exiting");
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     $desktopContainer.removeClass("exiting active");
                     $desktopContainer.find("video").attr("src", desktopVideoSrc);
                     $desktopContainer.find("video")[0].load();
-                    
-                    setTimeout(function() {
+
+                    setTimeout(function () {
                         $desktopContainer.addClass("active");
                     }, 100);
                 }, 500);
@@ -178,17 +178,17 @@ $(document).ready(function () {
             // Mobile video handling - show only the video for this specific card
             // Hide all other mobile videos first
             $(".mobile-video-container").removeClass("active");
-            
+
             if ($mobileContainer.hasClass("active")) {
                 // Add exit animation
                 $mobileContainer.addClass("exiting");
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     $mobileContainer.removeClass("exiting active");
                     $mobileContainer.find("video").attr("src", mobileVideoSrc);
                     $mobileContainer.find("video")[0].load();
-                    
-                    setTimeout(function() {
+
+                    setTimeout(function () {
                         $mobileContainer.addClass("active");
                     }, 100);
                 }, 500);
@@ -206,14 +206,14 @@ $(document).ready(function () {
         $("#main-video-container").removeClass("active");
         $(".mobile-video-container").removeClass("active");
     }
-    
+
     // Handle window resize for responsive behavior
-    $(window).resize(function() {
+    $(window).resize(function () {
         const width = window.innerWidth;
         const $desktopContainer = $("#main-video-container");
         const $mobileContainer = $(".mobile-video-container");
         const activeItem = $(".how-it-works-card.active");
-        
+
         if (width >= 768 && activeItem.length) {
             // Switch to desktop view
             const desktopVideoSrc = activeItem.data("video");
@@ -236,14 +236,14 @@ $(document).ready(function () {
             }
         }
     });
-    
+
     // Initialize video visibility on page load
     const $initialActiveCard = $(".how-it-works-card.active");
     if ($initialActiveCard.length && $initialActiveCard.data("video-card") === true) {
         const desktopVideoSrc = $initialActiveCard.data("video");
         const mobileVideoSrc = $initialActiveCard.data("mobile-video");
         const isDesktop = window.innerWidth >= 768;
-        
+
         if (isDesktop) {
             // Show desktop video
             $("#main-video-container").find("video").attr("src", desktopVideoSrc);
